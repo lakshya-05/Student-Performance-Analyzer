@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Data Analysis</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Full Data Analysis</h2>
+        
+        <div class="inwrapper">
+            <div class="block1">
+                <div class="a1-wrapper">
+                    <div class="a1"><p>Count</p>
+                        {{total_stu}}
+                    </div>
+                    <div class="a1"><p>Average Score</p>
+                         {{ total_avg }}</div>
+                </div>
+                <div class="a2" data-title="Histogram of Scores">
+                    Histogram Chart
+                </div>
+                
+            </div>
+
+            <div class="block2">
+                <div class="a3" data-title="Average Score Per Student">
+                    Average Score Chart
+                </div>
+                <div class="a4">
+                    <h3 class="topper-heading">Toppers</h3>
+                    <ul>
+                        {% for index, row in toppers.iterrows() %}
+                            <li>{{ row.first_name }} {{ row.last_name }} — {{ row.score }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+            </div>
+            <div class="block3">
+                <div class="a5" data-title="Avg per Subject Chart">
+                    Avg per Subject Chart
+                </div>
+
+                <div class="a5" data-title="Score Frequency Chart">
+                    Score Frequency
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
